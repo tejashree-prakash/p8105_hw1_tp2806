@@ -1,0 +1,36 @@
+---
+title: "p8105_hw1_tp2806"
+author: "Tejashree Prakash"
+date: 2025-09-11
+output: github_document
+---
+
+```{r setup, include=FALSE}
+#Load libraries and data
+library(moderndive)
+library(ggplot2) #For ggplot scatter plot generation. 
+data("early_january_weather")
+```
+
+```{r}
+#Problem 1: Get size of the dataset
+rows <- nrow(early_january_weather)
+col <- ncol(early_january_weather)
+mean_temp <- mean(early_january_weather$temp)
+```
+
+The early_january_weather dataset contains `r rows` rows and `r col` columns of hourly weather data collected during early January. The variables included in this dataset are `r ls(early_january_weather)`. The mean temperature from the values in this dataset is `r mean_temp`.
+
+```{r}
+#Problem 1: Make scatter plot. 
+weather_scplot <- ggplot(early_january_weather, aes(x = time_hour, y=temp, colour = humid)) + geom_point()
+
+#Save plot. 
+ggsave("weather_scatterplot.png", plot = weather_scplot, width = 6, height = 4, dpi = 300)
+```
+The scatter plot demonstrates a general upward shift, when relating time by hour (x) against temperature (y). This means that, on average, as the time passes, the temperature increases. Additionally, the later times have a greater humidity level than compared to the earlier times in this dataset. 
+
+```{r}
+#Problem 2:
+```
+
