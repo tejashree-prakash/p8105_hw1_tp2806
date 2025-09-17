@@ -22,8 +22,10 @@ mean_temp <- mean(early_january_weather$temp)
 
 The early_january_weather dataset contains `r rows` rows and `r col` columns of hourly weather data collected during early January. The variables included in this dataset are `r ls(early_january_weather)`.
 
-Important variables include: 
-- `temp`: temperature in °F, the mean temperature is `r mean_temp`.
+Important variables include:
+
+- `temp`: temperature in °F, the mean temperature is `r mean_temp` °F.
+
 - `humid`: relative humidity (%)
 
 
