@@ -63,13 +63,7 @@ If I take the mean of my numeric vector of 10 random values, I get `r mean_numer
 ```{r results='hide', message=FALSE}
 # Convert each variable type to numeric 
 greater_0 <- as.numeric(randomdf$greater_0)
-mean_logic <- mean(greater_0) %>% print()
-
 char_vector <- as.numeric(randomdf$char_vector)   
-mean_char <- mean(char_vector) %>% print()
-
 factor_vector <- as.numeric(randomdf$factor_vector)
-mean_factor <- mean(factor_vector) %>% print()
-
 ```
 If I force these variables to a numeric class, it mostly works. The logic variable still results in the same mean, which demonstrates that logic variables can work to produce a mean without being converted to numeric. For the factor variable, I am able to change it to numeric and then obtain a mean - which is the mean of underlying level, low = 1, medium = 2, high = 3 . However, a character variable cannot be converted to numeric unless I map it out to be numeric. For example, I'd have to state that a = 1, b = 2, etc. 
