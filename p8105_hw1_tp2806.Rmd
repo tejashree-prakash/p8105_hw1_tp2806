@@ -20,7 +20,12 @@ col <- ncol(early_january_weather)
 mean_temp <- mean(early_january_weather$temp)
 ```
 
-The early_january_weather dataset contains `r rows` rows and `r col` columns of hourly weather data collected during early January. The variables included in this dataset are `r ls(early_january_weather)`. The mean temperature from the values in this dataset is `r mean_temp`.
+The early_january_weather dataset contains `r rows` rows and `r col` columns of hourly weather data collected during early January. The variables included in this dataset are `r ls(early_january_weather)`.
+
+Important variables include: 
+- `temp`: temperature in °F, the mean temperature is `r mean_temp`.
+- `humid`: relative humidity (%)
+
 
 ```{r}
 #Problem 1: Make scatter plot. 
@@ -53,7 +58,7 @@ mean_factor <- mean(randomdf$factor_vector)
 If I take the mean of my numeric vector of 10 random values, I get `r mean_numeric`. If I take the mean of the logic variable, I get `r mean_logic`, which is the proportion of values greater than 0. However, if I take the mean of the remaining two variables, the character and factor variables, I return NA. This is because these variables do not contain numeric values, and therefore I cannot obtain a mean. 
 
 
-```{r}
+```{r results='hide', message=FALSE}
 # Convert each variable type to numeric 
 greater_0 <- as.numeric(randomdf$greater_0)
 mean_logic <- mean(greater_0) %>% print()
