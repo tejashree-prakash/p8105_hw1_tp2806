@@ -53,10 +53,10 @@ mean_factor <- mean(randomdf$factor_vector)
 If I take the mean of my numeric vector of 10 random values, I get `r mean_numeric`. If I take the mean of the logic variable, I get `r mean_logic`, which is the proportion of values greater than 0. However, if I take the mean of the remaining two variables, the character and factor variables, I return NA. This is because these variables do not contain numeric values, and therefore I cannot obtain a mean. 
 
 
-```{r results='hide', message=FALSE}
+```{r}
 # Convert each variable type to numeric 
 greater_0 <- as.numeric(randomdf$greater_0)
-mean_logic <- mean(greater_0_test) %>% print()
+mean_logic <- mean(greater_0) %>% print()
 
 char_vector <- as.numeric(randomdf$char_vector)   
 mean_char <- mean(char_vector) %>% print()
